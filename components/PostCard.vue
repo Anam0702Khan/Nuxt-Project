@@ -1,4 +1,5 @@
 <template>
+<NuxtLink :to="`/posts/${post.id}`" class="block">
   <div class="bg-white p-4 rounded-2xl shadow-md mb-4 hover:scale-105 transition-all cursor-pointer">
     
     <div class="h-[300px] relative"><img src="https://nuxt-content.netlify.app/img/hello-world.jpg" alt="Hello World" class="absolute w-full h-full object-cover"></div>
@@ -32,6 +33,7 @@
       Posted by User #{{ post.userId }}
     </div>
   </div>
+   </NuxtLink>
 </template>
 
 <script setup>
