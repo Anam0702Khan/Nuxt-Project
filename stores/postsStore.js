@@ -13,7 +13,7 @@ export const usePostsStore = defineStore('posts', () => {
       // console.log(data,"data")
       posts.value = data.posts
       // console.log(posts.value)
-      console.log(JSON.stringify(posts.value))
+      // console.log(JSON.stringify(posts.value))
     } catch (error) {
       console.error('Failed to fetch posts:', error)
     } finally {
