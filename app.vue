@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-gray-200">
     <header class="bg-white shadow-md p-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-gray-900">
-        <NuxtLink to="/">Web Reinvent Blog</NuxtLink>
+        <NuxtLink to="/"> Blog</NuxtLink>
       </h1>
       <nav class="space-x-4">
         <NuxtLink 
@@ -34,7 +34,7 @@
     </main>
 
     <footer class="text-center text-gray-500 p-4">
-      &copy; 2025 Web Reinvent Blog App
+      &copy; 2025  Blog App
     </footer>
   </div>
 </template>

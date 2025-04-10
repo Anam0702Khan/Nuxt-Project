@@ -1,3 +1,33 @@
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import {useAuthStore} from "../stores/useAuthStore"
+
+const name = ref('')
+const email = ref('')
+const password = ref('')
+
+const authStore = useAuthStore()
+const router = useRouter()
+
+onMounted(() => {
+  window.authStore = authStore
+})
+
+function handleSignup() {
+  try{
+     console.log('📤 Signing up:', { name: name.value, email: email.value, password: password.value })
+    authStore.signup(name.value,email.value, password.value)
+    alert('Account created successfully')
+     router.push('/login')
+  }catch(err){
+  alert(err.message)
+  }
+  console.log('Signup:', { name: name.value, email: email.value, password: password.value })
+}
+
+</script>
+
 <template>
   <div class="min-h-screen flex items-center justify-center ">
     <div class="bg-white p-8 rounded-2xl shadow-md w-full max-w-md">
@@ -25,14 +55,4 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
 
-const name = ref('')
-const email = ref('')
-const password = ref('')
-
-function handleSignup() {
-  console.log('Signup:', { name: name.value, email: email.value, password: password.value })
-}
-</script>

@@ -1,3 +1,24 @@
+<script setup>
+import { ref } from 'vue'
+import {useAuthStore} from "../stores/useAuthStore"
+import {useRouter} from "vue-router"
+
+const email = ref('')
+const password = ref('')
+const authStore = useAuthStore()
+const router = useRouter()
+
+function handleLogin() {
+  try{
+   authStore.login(email.value, password.value)
+   alert("user logged in successfully")
+   router.push('/posts')
+  }catch(err){
+  alert(err.message)
+  }
+  console.log('Login:', { email: email.value, password: password.value })
+}
+</script>
 <template>
   <div class="min-h-screen flex items-center justify-center ">
     <div class="bg-white p-8 rounded-2xl shadow-md w-full max-w-md">
@@ -20,14 +41,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-
-const email = ref('')
-const password = ref('')
-
-function handleLogin() {
-  console.log('Login:', { email: email.value, password: password.value })
-}
-</script>
