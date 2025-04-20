@@ -33,9 +33,11 @@
       <NuxtPage />
     </main>
 
-    <footer class="text-center text-gray-500 p-4">
-      &copy; 2025  Blog App
-    </footer>
+   <footer class="py-6  text-black text-center">
+  <p>&copy; 2025 Blog App. All rights reserved.</p>
+  <p class="text-sm">Built with ❤️ using Vue & Tailwind CSS</p>
+</footer>
+
   </div>
 </template>
 

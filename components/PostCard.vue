@@ -1,9 +1,15 @@
 <template>
 <NuxtLink :to="`/posts/${post.id}`" class="block">
   <div class="bg-white p-4 rounded-2xl shadow-md mb-4 hover:scale-105 transition-all cursor-pointer">
-    
-    <div class="h-[300px] relative"><img src="https://nuxt-content.netlify.app/img/hello-world.jpg" alt="Hello World" class="absolute w-full h-full object-cover"></div>
-    <h2 class="text-xl font-semibold mb-2">{{ post.title }}</h2>
+    <!-- <div class="h-[300px] relative"><img src="https://nuxt-content.netlify.app/img/hello-world.jpg" alt="Hello World" class="absolute w-full h-full object-cover"></div> -->
+ <div class="h-[200px] overflow-hidden rounded-xl mb-4">
+  <img
+    :src="`https://picsum.photos/seed/${post.id}/800/300`"
+    alt="Post Thumbnail"
+    class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+  />
+</div>
+    <h2 class="text-xl font-semibold mb-2 mt-2">{{ post.title }}</h2>
     <p class="text-gray-600 mb-4">{{ post.body }}</p>
 
     <div class="mb-2">
